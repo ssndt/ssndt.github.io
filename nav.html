@@ -1,0 +1,59 @@
+<div class="nav">
+    <button class="site-nav">
+        <div class="navicon"></div>
+    </button>
+    <ul class="nav_items">
+        <li class="nav_item">
+            <a class="nav-page" href="/">负责人</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav-page" href="/%E5%9B%A2%E9%98%9F%E6%88%90%E5%91%98">团队成员</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav-page" href="/%E5%AD%A6%E6%9C%AF%E8%AE%BA%E6%96%87">学术论文</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav-page" href="/%E7%A7%91%E7%A0%94%E9%A1%B9%E7%9B%AE">科研项目</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav-page" href="/%E4%B8%93%E4%B8%9A%E6%9C%8D%E5%8A%A1">专业服务</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav-page" href="/%E6%95%99%E5%AD%A6%E5%B7%A5%E4%BD%9C">教学工作</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav-page" href="/%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC">联系我们</a>
+        </li>
+    </ul>
+</div>
+<div class="cd-top">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+</div>
+
+<script type="text/javascript">
+    $(".site-nav").click(function () {
+        if ($(".nav").hasClass("nav-open")) {
+            $(".nav").removeClass("nav-open").addClass("nav-close")
+        } else {
+            $(".nav").removeClass("nav-close").addClass("nav-open")
+        }
+    })
+    
+    // 显示 cdtop
+    $(document).ready(function ($) {
+        var offset = 100,
+            scroll_top_duration = 700,
+            $back_to_top = $('.nav-wrap');
+
+        $(window).scroll(function () {
+            ($(this).scrollTop() > offset) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible');
+        });
+
+        $(".cd-top").on('click', function (event) {
+            event.preventDefault();
+            $('body,html').animate({
+                scrollTop: 0,
+            }, scroll_top_duration);
+        });
+    });
+</script>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+        <title>WSN Lab</title>
+        <meta name="author" content="胡世红">
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css">
+        <meta name="generator" content="Hexo 5.1.1">
+    </head>
+    <body>
+        <header id="page_header">
+        </header>
+        <main id="page_main">
+            <div class="side-card sticky">
+                <div class="card-wrap" >
+                    <div class="author-avatar">
+                        <img class="avatar-img" src="/img/liguanghui.png"  alt="avatar">
+                    </div>
+                    <div class="author-discrip">
+                        <h3>李光辉</h3>
+                        <p class="author-bio">教授、博导</p>
+                    </div>
+                    <div class="author-links">
+                        <ul class="social-links">
+                            <li>
+                                <a class="e-social-link" href="mailto:ghli@jiangnan.edu.cn" target="_blank">
+                                    <i class="fas fa-envelope-open" aria-hidden="true"></i>
+                                    <span>ghli@jiangnan.edu.cn</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="page" >
+                <h2 class="page-title"></h2>
+                <article>
+                    <h2 id="李光辉">
+                        <a href="#李光辉，江南大学" class="headerlink" title="李光辉，江南大学"></a>
+                        李光辉
+                    </h2>
+                    <h3 id="无线传感网高技术研究重点实验室（WSN-Lab）">
+                        <a href="#无线传感网高技术研究重点实验室（WSN-Lab）" class="headerlink" title="无线传感网高技术研究重点实验室（WSN-Lab）"></a>
+                        无线传感网高技术研究重点实验室（WSN-Lab）
+                    </h3>
+                    <p>
+                        <a href="mailto:ghli@jiangnan.edu.cn">ghli@jiangnan.edu.cn</a>
+                    </p>
+                    <hr>
+                    <div id="map_container" style="600px; height: 400px;"></div>
+                    <h2 id="我们在江大">
+                        <a href="#我们在江大" class="headerlink" title="我们在江大"></a>
+                        我们在江大
+                    </h2>
+                    <p>欢迎来到江南大学交流访问！</p>
+                    <p>
+                        <img src="/img/school.jpg">
+                    </p>
+                    <!-- 下面是修改html格式的js代码，与内容无关，若无需求请勿修改 -->
+                    <!-- author: Zhen Qin -->
+                    <script>
+                        function radius() {
+                            var imgList = document.getElementsByClassName('page')[0].getElementsByTagName('img');
+                            for (var i = 0; i < imgList.length; i++) {
+                                imgList[i].setAttribute("style", "border-radius: 8px;");
+                            }
+                        }
+
+                        radius();
+                    </script>
+                    <script>
+                        var url = 'https://webapi.amap.com/maps?v=1.4.15&key=b8238f0da23b1e1d9aaa6fc935fba5dc';
+                        var jsapi = document.createElement('script');
+                        jsapi.charset = 'utf-8';
+                        jsapi.src = url;
+
+                        jsapi.onload = function() {
+                            var map = new AMap.Map('map_container',{
+                                zoom: 15,
+                                //级别
+                                center: [120.28248,31.484116],
+                                //中心点坐标
+                            });
+
+                            // 比例尺
+                            AMap.plugin(['AMap.Scale', ], function() {
+                                // 在图面添加工具条控件，工具条控件集成了缩放、平移、定位等功能按钮在内的组合控件
+                                map.addControl(new AMap.Scale({}));
+                            });
+
+                            // 左上角工具条
+                            AMap.plugin(['AMap.ToolBar', ], function() {
+                                // 在图面添加工具条控件，工具条控件集成了缩放、平移、定位等功能按钮在内的组合控件
+                                map.addControl(new AMap.ToolBar({
+                                    // 简易缩放模式，默认为 false
+                                    liteStyle: false
+                                }));
+                            });
+
+                            // 鹰眼
+                            var overView = AMap.plugin(['AMap.OverView', ], function() {
+                                map.addControl(new AMap.OverView({
+                                    isOpen: true
+                                }));
+                            });
+
+                            //实例化信息窗体
+                            var content = ["<font style=\"font-size: 1.2em;\"><strong>江南大学WSN实验室&nbsp;&nbsp;</strong></font>", "<font style=\"font-size: 0.9em;\">蠡湖大道1800号</font>", "<font style=\"font-size: 0.9em;\">无锡市滨湖区</font>"];
+
+                            // 创建 infoWindow 实例    
+                            var infoWindow = new AMap.InfoWindow({
+                                content: content.join("<br>"),
+                                //传入 dom 对象，或者 html 字符串
+                                offset: new AMap.Pixel(0,-30)
+                            });
+
+                            //添加marker标记
+                            function addMarker() {
+                                map.clearMap();
+                                var marker = new AMap.Marker({
+                                    map: map,
+                                    position: [120.28248,31.484116],
+                                    title: "WSN实验室",
+                                });
+                                //鼠标点击marker弹出自定义的信息窗体
+                                AMap.event.addListener(marker, 'click', function() {
+                                    infoWindow.open(map, marker.getPosition());
+                                });
+                                infoWindow.open(map, marker.getPosition());
+                            }
+
+                            addMarker();
+
+                            //关闭信息窗体
+                            function closeInfoWindow() {
+                                map.clearInfoWindow();
+                            }
+                        }
+                        document.head.appendChild(jsapi);
+                    </script>
+                    <style type="text/css">
+                        .amap-logo {
+                            display: none;
+                            opacity: 0 !important;
+                        }
+
+                        .amap-copyright {
+                            opacity: 0;
+                        }
+
+                        #map_container {
+                            border-radius: 8px;
+                        }
+                    </style>
+                </article>
+            </div>
+        </main>
+        <div class="nav-wrap">
+        </div>
+        <footer id="page_footer">
+            <div class="footer_wrap">
+                <div style="float:right;">
+                    <a href="https://www.jiangnan.edu.cn/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <img src="/img/jiangnan.jpeg" style="width: 160px">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script>
+        <script src="/js/add_menu.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
