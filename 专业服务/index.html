@@ -80,26 +80,26 @@
                         </div>
                     </div>
                 </article>
+                <script>
+                    function setImgStyle() {
+                        var container = document.querySelector('.social-service');
+        
+                        var width = document.documentElement.clientWidth
+                        
+                        if (width>750) {
+                            container.setAttribute("style", "grid-template-columns: 1fr 1fr;");
+                        } else {
+                            container.setAttribute("style", "grid-template-columns: 1fr;");
+                        }
+                    }
+                    setImgStyle()
+                </script>
             </div>
         </main>
         <div class="nav-wrap">
         </div>
         <footer id="page_footer">
         </footer>
-        <script>
-            function setImgStyle() {
-                var container = document.querySelector('.social-service');
-
-                var width = document.documentElement.clientWidth
-                
-                if (width>750) {
-                    container.setAttribute("style", "grid-template-columns: 1fr 1fr;");
-                } else {
-                    container.setAttribute("style", "grid-template-columns: 1fr;");
-                }
-            }
-            setImgStyle()
-        </script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script>
         <script src="/js/add_menu.js"></script>
