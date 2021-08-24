@@ -1,0 +1,35 @@
+<div class="footer_wrap">
+    <div style="padding: 10px 0" class="footer-address-top">
+        <a href="https://www.jiangnan.edu.cn/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+            <img src="/img/jiangnan.png" style="width: 160px">
+        </a>
+        <p style="color: rgb(255, 255, 255); font-size: 12px; margin-top: 0;">技术支持：<a href="/">SS&NDT实验室</a></p>
+    </div>
+    <div style="padding: 10px 0;" class="footer-address">
+        <p style="color: rgb(255, 255, 255); font-size: 12px; margin: 0;">地址：江苏省无锡市蠡湖大道1800号</p>
+        <p style="color: rgb(255, 255, 255); font-size: 12px; margin: 0;">邮编：214122</p>
+        <p style="color: rgb(255, 255, 255); font-size: 12px; margin: 0;">联系电话：0510-85197572</p>
+        <p style="color: rgb(255, 255, 255); font-size: 12px; margin: 0;">服务邮箱：ssndtjnu@126.com</p>
+    </div>
+</div>
+
+<script>
+    function setImgStyle() {
+        var container = document.querySelector('.footer_wrap');
+        var address = document.querySelector('.footer-address');
+        var addressTop = document.querySelector('.footer-address-top');
+
+        var width = document.documentElement.clientWidth
+        
+        if (width>750) {
+            container.setAttribute("style", "");
+            address.setAttribute("style", "padding: 10px 0;");
+            addressTop.setAttribute("style", "padding: 10px 0;");
+        } else {
+            container.setAttribute("style", "flex-direction: column; align-items: center; padding-right: 4em; padding-left: 4em;");
+            address.setAttribute("style", "padding: 0 0 10px 0;");
+            addressTop.setAttribute("style", "padding: 10px 0 0;");
+        }
+    }
+    setImgStyle()
+</script>

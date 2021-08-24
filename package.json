@@ -1,0 +1,14 @@
+{
+  "name": "ssndt.github.io-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "anywhere": "anywhere"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "anywhere": "^1.5.0"
+  }
+}
