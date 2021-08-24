@@ -58,29 +58,29 @@
                         </p>
                     </div>
                 </article>
+                <script>
+                    function setImgStyle() {
+                        var container = document.querySelector('.dai-lao-shi');
+                        var wrapDai = document.querySelector('.wrap-dai');
+        
+                        var width = document.documentElement.clientWidth
+                        
+                        if (width>750) {
+                            container.setAttribute("style", "");
+                            wrapDai.setAttribute("style", "");
+                        } else {
+                            container.setAttribute("style", "display: block; width: 56%; margin: 0 auto 12px;");
+                            wrapDai.setAttribute("style", "display: block;");
+                        }
+                    }
+                    setImgStyle()
+                </script>
             </div>
         </main>
         <div class="nav-wrap">
         </div>
         <footer id="page_footer">
         </footer>
-        <script>
-            function setImgStyle() {
-                var container = document.querySelector('.dai-lao-shi');
-                var wrapDai = document.querySelector('.wrap-dai');
-
-                var width = document.documentElement.clientWidth
-                
-                if (width>750) {
-                    container.setAttribute("style", "");
-                    wrapDai.setAttribute("style", "");
-                } else {
-                    container.setAttribute("style", "display: block; width: 56%; margin: 0 auto 12px;");
-                    wrapDai.setAttribute("style", "display: block;");
-                }
-            }
-            setImgStyle()
-        </script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery-pjax@latest/jquery.pjax.min.js"></script>
         <script src="/js/add_menu.js"></script>
